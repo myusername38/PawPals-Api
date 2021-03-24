@@ -7,11 +7,6 @@ const { signup, login } = require('./handlers/users');
 const express = require('express');
 const app = express();
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: "https://habitity.firebaseio.com"
-// });
-
 let corsOptions = {
     origin: (origin, callback) => {
         callback(null, true)

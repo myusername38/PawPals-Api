@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 const credentials = require('../adminConfig.js');
 
 admin.initializeApp({
-    databaseURL: "'https://redredistribution.firebaseio.com'",
+    databaseURL: "'pawpals-api.firebaseapp.com'",
     credential: admin.credential.cert(credentials),
 });
 
