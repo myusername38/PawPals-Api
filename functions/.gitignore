@@ -1,3 +1,4 @@
 node_modules/
 adminConfig.js
 secretKey.json
+emailConfig.js

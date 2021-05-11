@@ -20,7 +20,7 @@ const actionCodeSettings = {
       minimumVersion: '12',
     },
     dynamicLinkDomain: 'pawpals.page.link',
-  };
+};
 
 exports.signup = (req, res) => {
     const newUser = {
@@ -45,6 +45,11 @@ exports.signup = (req, res) => {
                 name: req.body.name,
                 dogs: [],
                 friends: [],
+                disliked: [],
+                liked: [],
+                uid: data.user.uid,
+                bio: '', 
+                picture:'',
             }),
         ]).then(() => {
             admin
@@ -52,7 +57,7 @@ exports.signup = (req, res) => {
             .generateEmailVerificationLink(newUser.email, actionCodeSettings)
             .then(link => {
                 const oobCode = link.toString().match(/(?<=oobCode%3D).*?(?=\s*%26)/)[0];
-                sendVerificationEmail(newUser.email, oobCode).then(info => {
+                sendVerificationEmail(newUser.email, oobCode, req.body.loc).then(info => {
                     return res.status(200).json({ message: 'Account Created'})
                 })
             })

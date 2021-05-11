@@ -1,4 +1,3 @@
-const { credential } = require('firebase-admin');
 const admin = require('firebase-admin');
 const credentials = require('../adminConfig.js');
 
